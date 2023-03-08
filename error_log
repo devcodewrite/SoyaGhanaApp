@@ -1,0 +1,2 @@
+[31-Oct-2022 14:42:01 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/codewrit/veren.codewrite.org/system/core/compat/mbstring.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/codewrit/veren.codewrite.org/system/core/CodeIgniter.php on line 288
+[31-Oct-2022 14:42:04 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/codewrit/veren.codewrite.org/system/core/compat/mbstring.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/codewrit/veren.codewrite.org/system/core/CodeIgniter.php on line 288
