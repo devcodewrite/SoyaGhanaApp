@@ -130,7 +130,6 @@
 														<div class="col-md-3 g-3 col-6">
     														<div class="card card-flush flex-row-fixed p-5 pb-5 w-100 w-xxl-250px mw-xxl-230px shadow-primary" style="height:350px;background:#F5F8FA;border:4px solid #E4E6EF;width:100%;">
     															<!--begin::Body-->
-    															
     															    <div class="card-body text-center d-">
     																<!--begin::Food img-->
     																<a href="<?= site_url('members/view/' . $row->id); ?>" target="_blank" class="d-inline-block" style="height:200px; overflow:hidden;">

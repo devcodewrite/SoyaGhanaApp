@@ -104,7 +104,7 @@ class MY_Model extends CI_Model
             $cluase = "$link_col." . singular($table) . "_id=$table.id";
             $query2 = $this->db->select('*')
                 ->from($table)
-                ->join($link_col, $cluase)
+                ->join($link_col, $cluase, 'left')
                 ->where($where2)
                 ->get();
 
@@ -165,7 +165,7 @@ class MY_Model extends CI_Model
                 $res_name = $table;
             }
             $cluase = "$link_col." . singular($table) . "_id=$table.id";
-            $this->db->join($table, $cluase);
+            $this->db->join($table, $cluase, 'left');
         }
 
         $this->db->where($where);
