@@ -16,7 +16,7 @@ if (!function_exists('datatable')) {
      * @param int $per_page number of results per page
      * @return array structure for datatables
      */
-    function datatable($query, int $start = 0, int $per_page = 2, int $draw = 1, $inputs = null)
+    function datatable($query, int $start = 0, int $per_page = 12, int $draw = 1, $inputs = null)
     {
         $ci = (object)get_instance();
         $take = $per_page;

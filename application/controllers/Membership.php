@@ -199,19 +199,22 @@ class Membership extends MY_Controller
 		$group = $this->input->get('group', true);
 		$page = $this->input->get('page', true);
 		$query = $this->input->get('query', true);
-
+		
 		if(!$group) redirect("membership/members?".($query?"query=$query&":'')."group=1".($page?"page=$page":''));
 
 		$dbQuery =  $this->db
-						->select("*")
+						->select("members.*")
 					 ->from('member_groups')
 					 ->join('members', 'member_id=members.id')
 					 ->where('member_groups.group_id', $group)
-					->where('members.verified', 'yes');
-		$datatable = datatable($dbQuery, $page,12,1);
+					->where('members.verified', 'yes')
+					->where('members.deleted_at', null)
+					->order_by('members.id', 'asc');
+		
+		$datatable = datatable($dbQuery, ($page?($page-1)*12:0),12);
 
 		$this->load->library('pagination');
-		$config['base_url'] = base_url('membership/members/');
+		$config['base_url'] = base_url('membership/members');
 		$config['use_page_numbers'] = TRUE;
 		$config['page_query_string'] = TRUE;
 		$config['enable_query_strings'] = TRUE;
