@@ -208,7 +208,7 @@ class Membership extends MY_Controller
 					 ->join('members', 'member_id=members.id')
 					 ->where('member_groups.group_id', $group)
 					 ->where('members.verified', 'yes');
-		$datatable = datatable($dbQuery, $page?$page:0,10,1);
+		$datatable = datatable($dbQuery, $page?$page:0,20,1);
 
 		$this->load->library('pagination');
 		$config['base_url'] = base_url('membership/members/');
@@ -217,7 +217,7 @@ class Membership extends MY_Controller
 		$config['enable_query_strings'] = TRUE;
 		$config['query_string_segment'] = 'page';
 		$config['total_rows'] = $datatable['recordsTotal'];
-		$config['per_page'] = 10;
+		$config['per_page'] = 20;
 		$config['reuse_query_string'] = TRUE;
 
 		$config['full_tag_open'] = ' <ul class="pagination">';
