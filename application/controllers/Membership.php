@@ -202,15 +202,22 @@ class Membership extends MY_Controller
 
 		if(!$group) redirect("membership/members?".($query?"query=$query&":'')."group=1".($page?"page=$page":''));
 
-		$members = $this->member->getByGroup($group,['verified' => 'yes']);
+		$dbQuery =  $this->db->distinct()
+						->select("*")
+					 ->from('member_groups')
+					 ->join('members', 'member_id=members.id')
+					 ->where('member_groups.group_id', $group)
+					 ->where('members.verified', 'yes');
+		$datatable = datatable($dbQuery, $page?$page:0,10,1);
+
 		$this->load->library('pagination');
 		$config['base_url'] = base_url('membership/members/');
 		$config['use_page_numbers'] = TRUE;
 		$config['page_query_string'] = TRUE;
 		$config['enable_query_strings'] = TRUE;
 		$config['query_string_segment'] = 'page';
-		$config['total_rows'] = sizeof($members);
-		$config['per_page'] = 20;
+		$config['total_rows'] = $datatable['recordsTotal'];
+		$config['per_page'] = 10;
 		$config['reuse_query_string'] = TRUE;
 
 		$config['full_tag_open'] = ' <ul class="pagination">';
@@ -231,7 +238,7 @@ class Membership extends MY_Controller
 
 		$this->pagination->initialize($config);
 
-		$data['members'] = $members;
+		$data['members'] = $datatable['data'];
 		$data['groups'] = $this->group->getAll();
 		$data['group'] = $this->group->getOne($group);
 		$data['sid'] = $group;
