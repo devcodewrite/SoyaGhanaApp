@@ -5,20 +5,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * PAYSTACK CONFIG
  */
 $config['paystack_secret_key'] = 'sk_test_2de381221593fcecc7517880794267969e20a7e2'; // test mode
-//$config['paystack_secret_key'] = 'sk_live_f1d0407995c1978f52f438ee21ed22c8c414ff23'; // live mode
+//$config['paystack_secret_key'] = ''; // live mode
 $config['paystack_public_key'] = 'pk_test_2f967c91b216133b6742dc2f5666ff7da65a3a76';
 //$config['paystack_public_key'] = '';
 $config['paystack_base_url'] = 'https://api.paystack.co';
 $config['paystack_currency'] = 'GHS';
 //CODEWRITE
 //$config['cw_paystack_public_key'] = 'pk_test_2f967c91b216133b6742dc2f5666ff7da65a3a76'; // test mode
-$config['cw_paystack_public_key'] = 'pk_live_ae7473e7c8a7e1d74042d549cd08d662e2d7fd4a'; // live mode
+$config['cw_paystack_public_key'] = ''; // live mode
 
 //$config['cw_paystack_secret_key'] = 'sk_test_2de381221593fcecc7517880794267969e20a7e2'; // test mode
-$config['cw_paystack_secret_key'] = 'sk_live_f1d0407995c1978f52f438ee21ed22c8c414ff23'; // live mode
+$config['cw_paystack_secret_key'] = ''; // live mode
 
 $config['sms_amount_per_unit'] = 0.080;
-$config['cw_phone'] = '0246092155';
+$config['cw_phone'] = '';
 $config['default_role_id'] = 3;
 
 /**
@@ -59,7 +59,7 @@ $config['sms_host'] = 'api.smsonlinegh.com';
 /**
  * SMS ONLINE API KEY
  */
-$config['sms_api_key'] = '2a309df7042eaa57d0abd671e335e6924c2c4c05cae2575f459a59ebc8d1659a';
+$config['sms_api_key'] = '';
 /**
  * SMS ONINE SENDER ID
  */
@@ -71,8 +71,8 @@ $config['email'] = [
    'protocol' => 'smtp',
    'smtp_host' => 'ssl://smtp.googlemail.com',
    'smtp_port' => 465,
-   'smtp_user' => 'eric.m4511@gmail.com', // change it to yours
-   'smtp_pass' => 'K3565-ghana', // change it to yours
+   'smtp_user' => '', // change it to yours
+   'smtp_pass' => '', // change it to yours
    'mailtype' => 'html',
    'charset' => 'iso-8859-1',
    'wordwrap' => TRUE
@@ -99,7 +99,7 @@ $config['email'] = [
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://app.soyaghana.org';
+$config['base_url'] = 'http://localhost';
 
 /*
 |--------------------------------------------------------------------------
