@@ -194,6 +194,7 @@ KTUtil.onDOMContentLoaded(function () {
 	KTSigninTwoSteps.init();
 	let countd = 60;
 	$("#resend").hide();
+	$('#resend-count-down').show();
 	var counter = setInterval(function () {
 		$("#resend-count-down").html("Resend in " + countd);
 		if (countd <= 0) {
@@ -203,6 +204,7 @@ KTUtil.onDOMContentLoaded(function () {
 			var otp = form.querySelector("[name=otp]");
 			$("#resend-count-down").html('<a href="'+formUrl+'?phone='+phone+'&otp='+otp+'"> Resend</a>');
 			$("#resend").show(100);
+			$('#resend-count-down').hide();
 		}
 		countd = countd - 1;
 	}, 1000);

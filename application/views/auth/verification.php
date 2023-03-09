@@ -125,7 +125,7 @@
     <!--begin::Javascript-->
     <?php $this->load->view('templates/global_js'); ?>
     <!--begin::Custom Javascript(used for this page only)-->
-    <script src="<?= base_url(); ?>assets/js/custom/authentication/sign-in/two-steps.js"></script>
+    <script src="<?= base_url(); ?>assets/js/custom/authentication/sign-in/two-steps.js?v=1"></script>
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 </body>
